@@ -34,35 +34,39 @@ if ($option === 'com_content')
 				$idbase = $input->getInt('catid');
 			}
 			break;
-	}
-}
-
-$cacheid = md5(serialize(array ($idbase, $module->module, $module->id)));
-
-$cacheparams               = new stdClass;
-$cacheparams->cachemode    = 'id';
-$cacheparams->class        = 'ModXirowebTinlienquanHelper';
-$cacheparams->method       = 'getList';
-$cacheparams->methodparams = $params;
-$cacheparams->modeparams   = $cacheid;
-
-
-
-$list = JModuleHelper::moduleCache($module, $params, $cacheparams);
-
-
-if (!empty($list))
-{
-	$grouped                    = false;
-	$article_grouping           = $params->get('article_grouping', 'none');
-	$article_grouping_direction = $params->get('article_grouping_direction', 'ksort');
-	$moduleclass_sfx            = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
-	$item_heading               = $params->get('item_heading');
-	$stylecss					= $params->get('stylecss', 'none');
-
-	if	($stylecss != 'none') {
-		JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/'.$stylecss.'.css', array('version' => 'auto', 'relative' => true));
+		default:
+			$idbase = 0;
+		break;
 	}
 
-	require JModuleHelper::getLayoutPath('mod_xiroweb_tinlienquan', $params->get('layout', 'default'));
+
+	$cacheid = md5(serialize(array ($idbase, $module->module, $module->id)));
+
+	$cacheparams               = new stdClass;
+	$cacheparams->cachemode    = 'id';
+	$cacheparams->class        = 'ModXirowebTinlienquanHelper';
+	$cacheparams->method       = 'getList';
+	$cacheparams->methodparams = $params;
+	$cacheparams->modeparams   = $cacheid;
+
+
+
+	$list = JModuleHelper::moduleCache($module, $params, $cacheparams);
+
+
+	if (!empty($list))
+	{
+		$grouped                    = false;
+		$article_grouping           = $params->get('article_grouping', 'none');
+		$article_grouping_direction = $params->get('article_grouping_direction', 'ksort');
+		$moduleclass_sfx            = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+		$item_heading               = $params->get('item_heading');
+		$stylecss					= $params->get('stylecss', 'none');
+
+		if	($stylecss != 'none') {
+			JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/'.$stylecss.'.css', array('version' => 'auto', 'relative' => true));
+		}
+
+		require JModuleHelper::getLayoutPath('mod_xiroweb_tinlienquan', $params->get('layout', 'default'));
+	}
 }
