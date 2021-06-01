@@ -8,6 +8,12 @@
  */
 
 defined('_JEXEC') or die;
+
+$stylecss = $params->get('stylecss', 'none');
+
+if	($stylecss != 'none') {
+	JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/'.$stylecss.'.css', array('version' => 'auto', 'relative' => true));
+}
 ?>
 <?php if ( $params->get('show_'.$listname, 0)) : ?>
 <<?php echo $params->get('title_heading', 'h4'); ?>>

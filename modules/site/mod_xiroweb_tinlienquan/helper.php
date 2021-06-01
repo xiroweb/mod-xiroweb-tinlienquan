@@ -17,7 +17,7 @@ $mod_path = JPATH_SITE . '/modules/mod_xiroweb_tinlienquan/';
 
 JLoader::register('ContentHelperRoute', $com_path . 'helpers/route.php');
 JModelLegacy::addIncludePath($com_path . 'models', 'ContentModel');
-JLoader::register('ContentModelArticlestinlienquan', $mod_path . 'models/articlestinlienquan.php');
+JLoader::register('ContentModelArticlestinlienquan', $mod_path . 'helper/models/articlestinlienquan.php');
 
 /**
  * Helper for mod_xiroweb_tinlienquan

@@ -8,6 +8,12 @@
  */
 
 defined('_JEXEC') or die;
+
+$stylecss					= $params->get('stylecss', 'none');
+
+if	($stylecss != 'none') {
+	JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/'.$stylecss.'.css', array('version' => 'auto', 'relative' => true));
+}
 ?>
 
 <div class="module<?php echo $moduleclass_sfx; ?> mod-tinlienquan-<?php echo $stylecss; ?>">

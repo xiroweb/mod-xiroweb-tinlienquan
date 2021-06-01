@@ -61,11 +61,7 @@ if ($option === 'com_content')
 		$article_grouping_direction = $params->get('article_grouping_direction', 'ksort');
 		$moduleclass_sfx            = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 		$item_heading               = $params->get('item_heading');
-		$stylecss					= $params->get('stylecss', 'none');
 
-		if	($stylecss != 'none') {
-			JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/'.$stylecss.'.css', array('version' => 'auto', 'relative' => true));
-		}
 
 		require JModuleHelper::getLayoutPath('mod_xiroweb_tinlienquan', $params->get('layout', 'default'));
 	}
