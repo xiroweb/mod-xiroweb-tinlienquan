@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+  <name>MOD_[TRANSLATION_KEY]</name>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <description>MOD_[TRANSLATION_KEY]_XML_DESCRIPTION</description>
+  <files>
+    <filename module="mod_[EXTENSION_ALIAS]">mod_[EXTENSION_ALIAS].php</filename>
+    <folder>tmpl</folder>
+    <folder>helper</folder>
+    <filename>mod_[EXTENSION_ALIAS].xml</filename>
+    <filename>helper.php</filename>
+  </files>
+
+  <media destination="mod_xiroweb_tinlienquan"
+    folder="media">
+    <folder>css</folder>
+    <folder>images</folder>
+  </media>
+
+  <languages>
+    <language tag="en-GB">language/en-GB/en-GB.mod_[EXTENSION_ALIAS].ini</language>
+    <language tag="en-GB">language/en-GB/en-GB.mod_[EXTENSION_ALIAS].sys.ini</language>
+    <language tag="vi-VN">language/vi-VN/vi-VN.mod_[EXTENSION_ALIAS].ini</language>
+    <language tag="vi-VN">language/vi-VN/vi-VN.mod_[EXTENSION_ALIAS].sys.ini</language>
+  </languages>
+
+  <scriptfile>script.php</scriptfile>
+  <!-- Update servers -->
+  <updateservers>
+     <server type="extension" priority="1" name="Xiroweb Tin liên quan">[EXTENSION_CDN]/modules/[EXTENSION_ALIAS]/update.xml</server>
+  </updateservers>
+  <config>
+    <fields name="params">
+     <fieldset name="basic" 
+        addfieldpath="/modules/mod_[EXTENSION_ALIAS]/helper/fields"
+        >
+        <field 
+          name="layoutnotenewset" 
+          type="note" 
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_NOTE_LAYOUTNOTENEWEST"/>
+        <field
+          name="show_newest"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOW_NEWEST_LABEL"
+          default="1"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+        <field
+          name="titlenewest"
+          type="text"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_TITLE_NEWEST_LABEL"
+          default="Tin mới nhất"
+          showon="show_newest:1"
+        />
+
+        <field
+          name="count_newest"
+          type="number"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_COUNT_NEWEST_LABEL"
+          default="4"
+          filter="integer"
+        />
+
+        <field 
+          name="layoutnotenewer" 
+          type="note" 
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_NOTE_LAYOUTNOTENEWER"/>
+        <field
+          name="show_newer"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOW_NEWER_LABEL"
+          default="1"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+        <field
+          name="titlenewer"
+          type="text"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_TITLE_NEWER_LABEL"
+  
+          default="Tin mới hơn"
+          showon="show_newer:1"
+        />
+
+        <field
+          name="count_newer"
+          type="number"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_COUNT_NEWER_LABEL"
+          default="4"
+          filter="integer"
+        />
+
+        <field 
+          name="layoutnoteolder" 
+          type="note" 
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_NOTE_LAYOUTNOTEOLDER"/>
+        <field
+          name="show_older"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOW_OLDER_LABEL"
+          default="1"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+        <field
+          name="titleolder"
+          type="text"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_TITLE_OLDER_LABEL"
+          default="Tin cũ hơn"
+          showon="show_older:1"
+        />
+
+        <field
+          name="count_older"
+          type="number"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_COUNT_OLDER_LABEL"
+          default="4"
+          filter="integer"
+        />
+
+        <field 
+          name="tinnhatnote3" 
+          type="note" 
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_NOTE_TINNHATNOTE3"/>
+
+        <field name="title_heading" type="headertag"
+          label="MOD_XIROWEB_TINTIEUDIEM_FIELD_TITLE_HEADING_LABEL"
+          description="MOD_XIROWEB_TINTIEUDIEM_FIELD_TITLE_HEADING_DES" 
+          default="h4"
+        />
+        <field
+          name="layoutdemotitleheading"
+          type="layoutdemo"
+          background="heading.png"
+          styles="width:390px;height:210px;"
+        />
+        <field
+          name="layout"
+          type="modulelayout"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SELECT_LAYOUT"
+          class="custom-select"
+          labelclass="theme-select"
+        />
+
+        <field 
+          name="tinnhatnote2" 
+          type="note" 
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_NOTE_LUACHONTHEM"/>
+        <field
+          name="show_date"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWDATE_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWDATE_DESC"
+          default="0"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+        <field
+          name="show_date_field"
+          type="list"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_DATEFIELD_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_DATEFIELD_DESC"
+          default="created"
+          showon="show_date:1"
+          validate="options"
+          >
+          <option value="created">MOD_XIROWEB_TINLIENQUAN_OPTION_CREATED_VALUE</option>
+          <option value="modified">MOD_XIROWEB_TINLIENQUAN_OPTION_MODIFIED_VALUE</option>
+          <option value="publish_up">MOD_XIROWEB_TINLIENQUAN_OPTION_STARTPUBLISHING_VALUE</option>
+        </field>
+        <field
+          name="show_date_format"
+          type="text"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_DATEFIELDFORMAT_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_DATEFIELDFORMAT_DESC"
+          default="d-m-Y"
+          showon="show_date:1"
+        />
+        <field
+          name="show_category"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWCATEGORY_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWCATEGORY_DESC"
+          default="0"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+        <field
+          name="show_hits"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWHITS_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWHITS_DESC"
+          default="0"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+        <field
+          name="show_author"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWAUTHOR_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWAUTHOR_DESC"
+          default="0"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          >
+          <option value="1">JSHOW</option>
+          <option value="0">JHIDE</option>
+        </field>
+
+
+          <field 
+          name="configstyleadminmulticustom"
+          type="configstyleadmin"
+          />
+
+      </fieldset>
+      
+      <fieldset
+        name="nangcaox"
+        label="MOD_XIROWEB_TINLIENQUAN_FIELD_GROUP_NANGCAO"
+        
+      >
+        <field
+          name="article_ordering"
+          type="hidden"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_ARTICLEORDERING_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_ARTICLEORDERING_DESC"
+          default="a.created"
+          validate="options"
+          showon="switchmode:options"
+          >
+          <option value="a.ordering">MOD_XIROWEB_TINLIENQUAN_OPTION_ORDERING_VALUE</option>
+          <option value="fp.ordering">MOD_XIROWEB_TINLIENQUAN_OPTION_ORDERINGFEATURED_VALUE</option>
+          <option value="a.hits">MOD_XIROWEB_TINLIENQUAN_OPTION_HITS_VALUE</option>
+          <option value="a.title">MOD_XIROWEB_TINLIENQUAN_OPTION_ORDERING_TITLE</option>
+          <option value="a.id">MOD_XIROWEB_TINLIENQUAN_OPTION_ID_VALUE</option>
+          <option value="a.alias">MOD_XIROWEB_JFIELD_ALIAS_LABEL</option>
+          <option value="a.created">MOD_XIROWEB_TINLIENQUAN_OPTION_CREATED_VALUE</option>
+          <option value="modified">MOD_XIROWEB_TINLIENQUAN_OPTION_MODIFIED_VALUE</option>
+          <option value="publish_up">MOD_XIROWEB_TINLIENQUAN_OPTION_STARTPUBLISHING_VALUE</option>
+          <option value="a.publish_down">MOD_XIROWEB_TINLIENQUAN_OPTION_FINISHPUBLISHING_VALUE</option>
+          <option value="random">MOD_XIROWEB_TINLIENQUAN_OPTION_RANDOM_VALUE</option>
+          <option value="rating_count" requires="vote">MOD_XIROWEB_TINLIENQUAN_OPTION_VOTE_VALUE</option>
+          <option value="rating" requires="vote">MOD_XIROWEB_TINLIENQUAN_OPTION_RATING_VALUE</option>
+        </field>
+            
+        <field
+          name="show_child_category_articles"
+          type="radio"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWCHILDCATEGORYARTICLES_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_SHOWCHILDCATEGORYARTICLES_DESC"
+          default="0"
+          filter="integer"
+          class="btn-group btn-group-yesno"
+          showon="switchmode:options"
+          >
+          <option value="1">MOD_XIROWEB_TINLIENQUAN_OPTION_INCLUDE_VALUE</option>
+          <option value="0">MOD_XIROWEB_TINLIENQUAN_OPTION_EXCLUDE_VALUE</option>
+        </field>
+
+        <field
+          name="levels"
+          type="number"
+          label="MOD_XIROWEB_TINLIENQUAN_FIELD_CATDEPTH_LABEL"
+          description="MOD_XIROWEB_TINLIENQUAN_FIELD_CATDEPTH_DESC"
+          default="1"
+          filter="integer"
+          showon="show_child_category_articles:1"
+        />
+
+      </fieldset>
+
+      <fieldset name="advanced"  >
+        <field
+          name="moduleclass_sfx"
+          type="textarea"
+          label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+          description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+          rows="3"
+        />
+        <field
+          name="owncache"
+          type="list"
+          label="COM_MODULES_FIELD_CACHING_LABEL"
+          description="COM_MODULES_FIELD_CACHING_DESC"
+          default="1"
+          filter="integer"
+          >
+          <option value="1">JGLOBAL_USE_GLOBAL</option>
+          <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+        </field>
+        <field
+          name="cache_time"
+          type="number"
+          label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+          description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+          default="900"
+          filter="integer"
+        />
+      </fieldset>
+    </fields>
+  </config>
+</extension>
