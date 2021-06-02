@@ -156,18 +156,6 @@
           labelclass="theme-select"
         />
 
-        <field
-          name="stylecss"
-          type="list"
-          label="MOD_XIROWEB_TINLIENQUAN_FIELD_STYLECSS_LABEL"
-          description="MOD_XIROWEB_TINLIENQUAN_FIELD_STYLECSS_DESC"
-          default="style1"
-          >
-          <option value="none">MOD_XIROWEB_TINLIENQUAN_FIELD_STYLECSS_OPTION_NONE</option>
-          <option value="default">MOD_XIROWEB_TINLIENQUAN_FIELD_STYLECSS_OPTION_DEFAULT</option>
-          <option value="style1">MOD_XIROWEB_TINLIENQUAN_FIELD_STYLECSS_OPTION_STYLE1</option>
-          <option value="style2">MOD_XIROWEB_TINLIENQUAN_FIELD_STYLECSS_OPTION_STYLE2</option>
-        </field>
         <field 
           name="tinnhatnote2" 
           type="note" 

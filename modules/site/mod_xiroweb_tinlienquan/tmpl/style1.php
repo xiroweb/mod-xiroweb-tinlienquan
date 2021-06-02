@@ -9,11 +9,11 @@
 
 defined('_JEXEC') or die;
 
-JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/default.css', array('version' => 'auto', 'relative' => true));
+JHtml::_('stylesheet', 'mod_xiroweb_tinlienquan/style1.css', array('version' => 'auto', 'relative' => true));
 
 ?>
 
-<div class="module<?php echo $moduleclass_sfx; ?> mod-tinlienquan-default">
+<div class="module<?php echo $moduleclass_sfx; ?> mod-tinlienquan-style1">
 <?php foreach ($list as  $listname => $items) : ?>
 	<?php require JModuleHelper::getLayoutPath('mod_xiroweb_tinlienquan', 'items_defaut'); ?>
 <?php endforeach; ?>
